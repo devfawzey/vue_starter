@@ -161,6 +161,19 @@ watch(user, (userNewValue) => {
 const quasarBtn = defineComponent((props) => () => h(QBtn, <QBtnProps>{
   flat: true, size: "small"
 }, "text"))
+const endSessionActionComponent = defineComponent((props) => () => h("a", {
+    href: `test?closewssession=${props.params.value}`,
+    target: "_target"
+  }, "End Session"),
+  {
+    props: {
+      params: {
+        required: true,
+        type: Object as PropType<ICellRendererParams>
+      }
+    }
+  }
+)
 ``
 ## Export && Import
 ```ts
