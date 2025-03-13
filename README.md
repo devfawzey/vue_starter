@@ -156,6 +156,12 @@ watch(user, (userNewValue) => {
   <button @[eventHandler]="sendFetchAccess"/>
 </template>
 ```
+## defineComponent
+```vue
+const quasarBtn = defineComponent((props) => () => h(QBtn, <QBtnProps>{
+  flat: true, size: "small"
+}, "text"))
+``
 ## Export && Import
 ```ts
 export default function useMouse() {
