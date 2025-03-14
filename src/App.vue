@@ -1,31 +1,25 @@
-<script setup lang="ts">
-
-</script>
 <template>
   <UApp>
-    <div class="flex flex-col items-center justify-center gap-4 h-screen">
-      <h1 class="font-bold text-2xl text-(--ui-primary)">
-        Nuxt UI v3 - Vue Playground
-      </h1>
-
-      <div class="flex items-center gap-2">
-        <UButton
-            label="Documentation"
-            icon="i-lucide-square-play"
-            to="https://ui3.nuxt.dev/getting-started/installation/vue"
-            target="_blank"
-        />
-
-        <UButton
-            label="GitHub"
-            color="neutral"
-            variant="outline"
-            icon="i-simple-icons:github"
-            to="https://github.com/nuxt/ui"
-            target="_blank"
-        />
-      </div>
-      <router-view />
-    </div>
+    <Header/>
+    <div style="height:var(--ui-header-height)"/>
+    <RouterView v-slot="{ Component }">
+      <Transition name="scale" mode="out-in">
+        <KeepAlive>
+          <component :is="Component" style="min-height: var(--ui-content-without-header)"/>
+        </KeepAlive>
+      </Transition>
+    </RouterView>
   </UApp>
 </template>
+
+<style>
+.scale-enter-active {
+  transition: all 0.5s ease;
+}
+
+.scale-enter-from,
+.scale-leave-to {
+  transform: translateY(10px) scale(.9);
+  opacity: 0;
+}
+</style>

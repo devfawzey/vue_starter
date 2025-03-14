@@ -15,3 +15,13 @@
     --color-green-900: #0a5331;
     --color-green-950: #052e16;
 }
+
+:root {
+    --ui-primary: black;
+    --ui-header-height: theme(spacing.16);
+    --ui-content-without-header: calc(100vh - var(--ui-header-height));
+}
+
+.dark {
+    --ui-primary: white;
+}
