@@ -4,7 +4,7 @@
     <div style="height:var(--ui-header-height)"/>
     <RouterView v-slot="{ Component }">
       <Transition name="scale" mode="out-in">
-        <KeepAlive>
+        <KeepAlive exclude="HomeView">
           <component :is="Component" style="min-height: var(--ui-content-without-header)"/>
         </KeepAlive>
       </Transition>
@@ -12,7 +12,7 @@
   </UApp>
 </template>
 
-<style>
+<style scoped>
 .scale-enter-active {
   transition: all 0.5s ease;
 }
