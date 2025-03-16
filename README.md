@@ -183,3 +183,11 @@ export const useCounter = 0;
 export { default as HomeView } from "./index.vue";
 import useMouse, {useCounter} from "path_example";
 ```
+## style binding
+```vue
+<style>
+.dynamic {
+  background-color: v-bind(color)
+}
+</style>
+```
