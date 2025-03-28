@@ -1,6 +1,7 @@
 import "./assets/main.css";
 
 import {createApp, type App} from "vue";
+import {createPinia} from "pinia"
 import router from "./router/index.ts"
 import uiPlugin from "@nuxt/ui/vue-plugin";
 import MyApp from "./App.vue";
@@ -18,6 +19,7 @@ const app = createApp(MyApp);
 
 app.use(uiPlugin);
 app.use(myPlugin)
+app.use(createPinia())
 app.use(router);
 
 app.mount("#app");

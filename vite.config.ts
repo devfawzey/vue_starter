@@ -8,7 +8,9 @@ import ui from "@nuxt/ui/vite";
 export default defineConfig({
     plugins: [
         vue(),
-        vueDevTools(),
+        vueDevTools({
+            launchEditor: "idea"
+        }),
         ui({
             ui: {
                 colors: {
