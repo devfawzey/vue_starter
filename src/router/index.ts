@@ -10,11 +10,6 @@ export const routes: RouteRecordRaw[] = [
         path: "/",
         component: () => import("@/views/HomeView.vue")
     },
-    {
-        name: "about",
-        path: "/about",
-        component: () => import("@/views/AboutView.vue")
-    }
 ]
 
 export const routeWithoutComponents = (): Pick<RouteRecordRaw, "name" | "path">[] =>
