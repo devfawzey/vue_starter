@@ -5,7 +5,7 @@ import {createPinia} from "pinia"
 import router from "./router/index.ts"
 import uiPlugin from "@nuxt/ui/vue-plugin";
 import MyApp from "./App.vue";
-import BaseWrapper from "./components/Base/BaseWrapper.vue";
+import BaseWrapper from "@/components/base/BaseWrapper.vue";
 import {ObjectPlugin} from "@vue/runtime-core";
 
 const myPlugin: ObjectPlugin = {

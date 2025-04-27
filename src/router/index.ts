@@ -1,14 +1,10 @@
-import {
-    createRouter,
-    createWebHistory,
-    type RouteRecordRaw,
-} from "vue-router"
+import {createRouter, createWebHistory, type RouteRecordRaw,} from "vue-router"
 
 export const routes: RouteRecordRaw[] = [
     {
         name: "home",
         path: "/",
-        component: () => import("@/views/HomeView.vue")
+        component: () => import("@/views/index.vue")
     },
 ]
 
