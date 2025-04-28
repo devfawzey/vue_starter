@@ -191,3 +191,44 @@ import useMouse, {useCounter} from "path_example";
 }
 </style>
 ```
+### Component and its Methods
+
+# Child
+
+```vue
+
+<template>
+  <input ref="input"/>
+</template>
+<script setup lang="ts">
+  import {defineExpose, useTemplateRef} from "@vue/runtime-core";
+
+  const input = useTemplateRef("input");
+  const canFocus = ref(false)
+
+  function focus() {
+    input.value.focus()
+  }
+
+  defineExpose({
+    focus,
+    canFocus
+  })
+</script>
+```
+# Parent
+
+```vue
+
+<template>
+  <Child ref="childInput"/>
+</template>
+<script setup lang="ts">
+  const childInput = ref("childInput");
+
+  function focusFromParent() {
+    childInput.value.focus()
+  }
+</script>
+```
+
