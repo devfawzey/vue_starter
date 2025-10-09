@@ -2,3 +2,61 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 @import "./ui-default-theme.css";
+
+.three-dots {
+    @apply overflow-hidden text-ellipsis whitespace-nowrap;
+}
+
+@utility ui-ring {
+    @apply ring-(--ring-color) ring-1;
+}
+@utility ui-gap {
+    @apply gap-(--ui-gap);
+}
+
+@utility disabled-btn {
+    @apply bg-gray-200 text-black/40 dark:bg-gray-500 dark:text-black/70;
+}
+
+@utility ui-disabled-btn {
+    @apply disabled:!disabled-btn aria-disabled:!disabled-btn;
+}
+
+.ui-scrollbar-y::-webkit-scrollbar-thumb {
+    background: red !important;
+    border-radius: 100%;
+    width: 8px;
+}
+
+.ui-scrollbar-y::-webkit-scrollbar-track {
+    background: red !important;
+    border-radius: 100%;
+    width: 8px;
+}
+
+.ui-scrollbar-y::-webkit-scrollbar-corner {
+    background: red !important;
+    border-radius: 100%;
+    width: 8px;
+}
+
+[data-vaul-drawer] {
+    -webkit-user-select: auto !important;
+    user-select: auto !important;
+}
+
+@keyframes hopSmooth {
+    0% {
+        transform: scale(1.45);
+    }
+    50% {
+        transform: scale(1.098);
+    }
+    100% {
+        transform: scale(1.45);
+    }
+}
+
+.landing-img-live {
+    animation: hopSmooth 24s cubic-bezier(0.8, 0.1, 0.2, 0.9) infinite;
+}

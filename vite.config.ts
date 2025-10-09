@@ -12,12 +12,19 @@ export default defineConfig({
             launchEditor: "idea"
         }),
         ui({
-            ui: {
-                colors: {
-                    primary: 'green',
-                    neutral: 'zinc'
-                },
+          ui: {
+            colors: {
+              primary: 'blue-ribbon',
+              neutral: 'zinc',
+              secondary: "rose"
             },
+            button: {
+              base: "dark:text-white capitalize cursor-pointer"
+            },
+            skeleton: {
+              base: 'dark:bg-gray-800 bg-gray-200'
+            }
+          },
         }),
     ],
     resolve: {
